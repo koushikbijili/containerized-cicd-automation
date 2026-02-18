@@ -1,11 +1,10 @@
-const express = require('express');
-const app = express();
-const PORT = 3000;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jenkins CI/CD</title>
+</head>
+<body>
+    <h1>Deployed via Jenkins + Docker Pipeline</h1>
+</body>
+</html>
 
-app.get('/', (req, res) => {
-  res.send('CI/CD Node App is running!');
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
