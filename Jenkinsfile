@@ -10,6 +10,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    docker.build("${DOCKERHUB_REPO}:${env.BUILD_NUMBER}")
                     docker.build("${DOCKERHUB_REPO}:latest")
                 }
             }
@@ -25,6 +26,7 @@ pipeline {
 
         stage('Push Image') {
             steps {
+                sh "docker push ${DOCKERHUB_REPO}:${env.BUILD_NUMBER}"
                 sh "docker push ${DOCKERHUB_REPO}:latest"
             }
         }
